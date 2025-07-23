@@ -20,10 +20,10 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Set up Maven 4 (RC version)
+      - name: Install Maven 4 RC
         run: |
-          MAVEN_VERSION=4.0.0-alpha-13
-          wget https://dlcdn.apache.org/maven/maven-4/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
+          MAVEN_VERSION=4.0.0-rc-1
+          wget https://repository.apache.org/content/repositories/snapshots/org/apache/maven/apache-maven/${MAVEN_VERSION}/apache-maven-${MAVEN_VERSION}-bin.tar.gz
           tar -xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz
           echo "MAVEN_HOME=$(pwd)/apache-maven-${MAVEN_VERSION}" >> $GITHUB_ENV
           echo "$(pwd)/apache-maven-${MAVEN_VERSION}/bin" >> $GITHUB_PATH
