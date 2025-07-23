@@ -1,0 +1,7 @@
+<extensions>
+  <extension>
+    <groupId>eu.maveniverse.maven.mason</groupId>
+    <artifactId>mason</artifactId>
+    <version>0.2.0</version>
+  </extension>
+</extensions>
