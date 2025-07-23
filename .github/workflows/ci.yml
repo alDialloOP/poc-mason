@@ -24,10 +24,12 @@ jobs:
         run: |
           MAVEN_VERSION=4.1.0-SNAPSHOT
           MAVEN_SNAPSHOT_VERSION=4.1.0-20250723.102828-38
-          wget https://repository.apache.org/content/repositories/snapshots/org/apache/maven/apache-maven/${MAVEN_VERSION}/apache-maven-${MAVEN_VERSION}-bin.tar.gz
-          tar -xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz
+          wget https://repository.apache.org/content/repositories/snapshots/org/apache/maven/apache-maven/${MAVEN_VERSION}/apache-maven-${MAVEN_SNAPSHOT_VERSION}-bin.tar.gz
+          tar -xzf apache-maven-${MAVEN_SNAPSHOT_VERSION}-bin.tar.gz
+          mv apache-maven-${MAVEN_SNAPSHOT_VERSION} apache-maven-${MAVEN_VERSION}
           echo "MAVEN_HOME=$(pwd)/apache-maven-${MAVEN_VERSION}" >> $GITHUB_ENV
           echo "$(pwd)/apache-maven-${MAVEN_VERSION}/bin" >> $GITHUB_PATH
+
 
       - name: Build with Maven 4.1.0-SNAPSHOT
         run: mvn clean package
